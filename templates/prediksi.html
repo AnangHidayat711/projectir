@@ -221,7 +221,7 @@
               <div style="padding: 15px; border-radius: 10px">
                 <form
                   method="post"
-                  action="/prediksi"
+                  action="/sentimen"
                   id="predictionForm"
                   onsubmit="submitForm(event)"
                 >
@@ -563,7 +563,7 @@
         var formData = new FormData(document.getElementById("predictionForm"));
 
         // Perform AJAX request
-        fetch("/prediksi", {
+        fetch("/sentimen", {
           method: "POST",
           body: formData,
         })
