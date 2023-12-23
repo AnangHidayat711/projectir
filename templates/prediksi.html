@@ -573,6 +573,7 @@
           .then((response) => response.text())  // Menangkap respons sebagai JSON
           .then((result) => {
           // Update the result in the input field with id "hasil-prediksi"
+            console.log(result);
             switch (result) {  // M
               case "positive":
                 prediksi = "Positif";
