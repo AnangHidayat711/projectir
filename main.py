@@ -139,7 +139,7 @@ def sentimen():
     else:
         result = model_noAspect.predict([clean_review])[0]
         
-    return jsonify({"sentiment": result})
+    return result;
     
 # Visualisasi
 @app.route('/visualisasi', methods=['GET'])
