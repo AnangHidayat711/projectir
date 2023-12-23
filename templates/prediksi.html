@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Prediksi Sentimen</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+      href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Stylesheet -->
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/styleprediksi.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+      /* Popup container */
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+        border-radius: 8px;
+        z-index: 1000;
+      }
+
+      /* Popup content */
+      .popup-content {
+        text-align: center;
+      }
+
+      .popup-content img {
+        max-width: 100%; /* Ensure the image doesn't exceed its container width */
+        height: 100%; /* Maintain the image's aspect ratio */
+        border-radius: 8px; /* Add rounded corners to the image */
+        margin-bottom: 10px; /* Optional: Add some space below the image */
+      }
+
+      /* Close button */
+      #close {
+        /* background-color: #1363c6; */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* Close button hover effect */
+      #close:hover {
+        background-color: #5b84b1;
+      }
+
+      #refresh:hover {
+        background-color: #9ec8b9;
+        border-color: #9ec8b9;
+      }
+
+      #prediksi:hover {
+        background-color: #9ec8b9;
+        border-color: #9ec8b9;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <!-- <div class="container-fluid bg-dark py-2 d-none d-md-flex">
+            <div class="container">
+                <div class="d-flex justify-content-between topbar">
+                    <div class="top-info">
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>23 Ranking Street, New York</small>
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>Email@Example.com</small>
+                    </div>
+                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We help you to Grow your Business</small></div>
+                    <div class="top-link">
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-primary sticky-top">
+      <div class="container">
+        <nav class="navbar navbar-dark navbar-expand-lg py-0">
+          <a href="/" class="navbar-brand">
+            <h1 class="text-white fw-bold d-block">
+              Information<span class="text-secondary"> Retrieval</span>
+            </h1>
+          </a>
+          <button
+            type="button"
+            class="navbar-toggler me-0"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse bg-transparent"
+            id="navbarCollapse"
+          >
+            <div class="navbar-nav ms-auto mx-xl-auto p-0">
+              <a href="/" class="nav-item nav-link">Beranda</a>
+              <a
+                href="/deskripsi"
+                class="nav-item nav-link "
+                >Deskripsi</a
+              >
+              <a href="/prediksi" class="nav-item nav-link active text-secondary">Prediksi</a>
+              <a href="/visualisasi" class="nav-item nav-link">Visualisasi</a>
+              <a href="/anggota" class="nav-item nav-link">Anggota</a>
+            </div>
+          </div>
+          <!-- <div class="d-none d-xl-flex flex-shirink-0">
+                        <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                            <a href="" class="position-relative animated tada infinite">
+                                <i class="fa fa-phone-alt text-white fa-2x"></i>
+                                <div class="position-absolute" style="top: -7px; left: 20px;">
+                                    <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="d-flex flex-column pe-4 border-end">
+                            <span class="text-white-50">Have any questions?</span>
+                            <span class="text-secondary">Call: + 0123 456 7890</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center ms-4 ">
+                            <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
+                        </div>
+                    </div> -->
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5" style="margin-top: -20px">
+      <div class="container text-center py-5">
+        <h1 class="display-2 text-white mb-4 animated slideInDown">
+          ANALISIS SENTIMEN
+        </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="#">PANTAI SANUR BALI</a></li>
+          </ol>
+        </nav>
+      </div>
+      <!-- start page title -->
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div
+            class="card"
+            style="background-color: #b06161; border: 2px solid white"
+          >
+            <div class="card-body bg-tabel" style="border-radius: 10px">
+              <div style="padding: 15px; border-radius: 10px">
+                <form
+                  method="post"
+                  action="/prediksi"
+                  id="predictionForm"
+                  onsubmit="submitForm(event)"
+                >
+                  <div class="row mb-3 text-white">
+                    <label
+                      for="example-text-input"
+                      class="col-sm-2 col-form-label"
+                      >Review :</label
+                    >
+                    <div class="col-sm-10">
+                      <textarea
+                        class="form-control"
+                        type="text"
+                        placeholder="Masukkan Teks Review"
+                        id="example-text-input"
+                        name="review"
+                      ></textarea>
+                      <input
+                        class="form-control"
+                        type="hidden"
+                        placeholder="Masukkan Teks Review"
+                        id="hasilPrediksi"
+                        name="hasil"
+                      ></input>
+                    </div>
+                  </div>
+                  <!-- end row -->
+                  <div class="row mb-3 text-white">
+                    <label class="col-sm-2 col-form-label">Aspek :</label>
+                    <div class="col-sm-10">
+                      <select
+                        id="aspekSelect"
+                        class="form-select"
+                        aria-label="Default select example"
+                        name="aspek"
+                        required
+                      >
+                        <option selected disabled>Pilih aspek</option>
+                        <option value="1">Attractions</option>
+                        <option value="2">Price</option>
+                        <option value="3">Access</option>
+                        <option value="4">Amenities</option>
+                        <option value="5">No Aspek</option>
+                      </select>
+                      <p class="text-dark mb-0" style="font-size: 12px">
+                        * Pilih aspek dengan tepat, kesalahan pemilihan aspek
+                        dapat memengaruhi hasil prediksi.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row mb-0 text-white">
+                    <label class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-10">
+                      <div class="button-items">
+                        <button
+                          type="submit"
+                          id="prediksi"
+                          class="btn btn-secondary waves-effect waves-light text-light"
+                        >
+                          Prediksi
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-primary waves-effect ml-2"
+                          id="refresh"
+                          onclick="refreshForm()"
+                        >
+                          Refresh
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+       
+              </div>
+              <!-- end row -->
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-md-3 col-sm-6">
+              <div class="mt-4 mt-md-0">
+                <img
+                  class="img-thumbnail avatar-xl avatar-img"
+                  alt="200x200"
+                  src="../static/img/sanur2.jpg"
+                  data-holder-rendered="true"
+                />
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="mt-4 mt-md-0">
+                <img
+                  class="img-thumbnail avatar-xl avatar-img"
+                  alt="200x200"
+                  src="../static/img/sanur3.jpg"
+                  data-holder-rendered="true"
+                />
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="mt-4 mt-md-0">
+                <img
+                  class="img-thumbnail avatar-xl avatar-img"
+                  alt="200x200"
+                  src="../static/img/sanur4.jpg"
+                  data-holder-rendered="true"
+                />
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="mt-4 mt-md-0">
+                <img
+                  class="img-thumbnail avatar-xl avatar-img"
+                  alt="200x200"
+                  src="../static/img/sanur5.png"
+                  data-holder-rendered="true"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- Page Header End -->
+    <div id="popup" class="popup" style="display: none">
+      <div class="popup-content">
+        <!-- <img src="../static/img/prediksi_positif.png" alt="" /> -->
+         <img id="popupImage" alt="" />
+        <h2 class="text-center">Hasil Prediksi</h2>
+        <p class="text-center">
+          <span class="ul" style="font-weight: bold; color: black"
+            >Ulasan : </span
+          ><span id="popupUlasan"></span>
+        </p>
+        <p class="text-center">
+          <span class="ul" style="font-weight: bold; color: black"
+            >Aspek : </span
+          ><span id="popupAspek"></span>
+        </p>
+        <p class="text-center" id="predict">
+          <span class="ul" style="font-weight: bold; color: black"
+            >Prediksi Sentimen :
+          </span>
+          <span id="popupPrediksi"></span>
+        </p>
+        <button class="btn btn-secondary" id="close" onclick="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+      <div class="container pt-5 pb-4">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6">
+            <a href="/">
+              <h1 class="text-white fw-bold d-block">
+                Kelompok<span class="text-secondary">3SD1</span>
+              </h1>
+            </a>
+            <p
+              class="mt-4 text-light text-justify"
+              style="text-align: justify"
+              ;
+            >
+              Analisis sentimen adalah teknik analisis data yang digunakan untuk
+              memahami perasaan, opini, dan sikap pengguna terhadap suatu merek,
+              produk, atau layanan
+            </p>
+            <div class="d-flex hightech-link">
+              <a
+                href="https://www.instagram.com/esd1.gs/"
+                class="btn-light nav-fill btn btn-square rounded-circle me-2"
+                ><i class="fab fa-facebook-f text-primary"></i
+              ></a>
+              <a
+                href=""
+                class="btn-light nav-fill btn btn-square rounded-circle me-2"
+                ><i class="fab fa-twitter text-primary"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/esd1.gs/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
+                class="btn-light nav-fill btn btn-square rounded-circle me-2"
+                ><i class="fab fa-instagram text-primary"></i
+              ></a>
+              <a
+                href=""
+                class="btn-light nav-fill btn btn-square rounded-circle me-0"
+                ><i class="fab fa-linkedin-in text-primary"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 text-center">
+            <a href="#" class="h3 text-secondary">Short Link</a>
+            <div class="mt-4 d-flex flex-column short-link">
+              <a href="/" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i
+                >Beranda</a
+              >
+              <a href="/deskripsi" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i
+                >Deskripsi</a
+              >
+              <a href="/prediksi" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i
+                >Prediksi</a
+              >
+              <a href="/visualisasi" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i
+                >Visualisasi</a
+              >
+              <a href="/anggota" class="mb-2 text-white"
+                ><i class="fas fa-angle-right text-secondary me-2"></i
+                >Anggota</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <a href="#" class="h3 text-secondary">Contact Us</a>
+            <div class="text-white mt-4 d-flex flex-column contact-link">
+              <a href="#" class="pb-3 text-light border-bottom border-primary"
+                ><i class="fas fa-map-marker-alt text-secondary me-2"></i>
+                Politeknik Statistika STIS</a
+              >
+              <a href="#" class="py-3 text-light border-bottom border-primary"
+                ><i class="fas fa-envelope text-secondary me-2"></i
+                >esd1.gs@gmail.com</a
+              >
+              <a
+                href="https://www.instagram.com/esd1.gs/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
+                class="py-3 text-light border-bottom border-primary"
+                ><i class="fab fa-instagram text-secondary me-2"></i> esd1.gs</a
+              >
+            </div>
+          </div>
+        </div>
+        <hr class="text-light mt-5 mb-4" />
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <span class="text-light"
+              ><a href="#" class="text-secondary"
+                ><i class="fas fa-copyright text-secondary me-2"></i>Regard</a
+              >, 3SD1</span
+            >
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <!--/* This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. */-->
+            <span class="text-light"
+              >Designed By<a href="https://htmlcodex.com" class="text-secondary"
+                >3SD1</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"
+      ><i class="fa fa-arrow-up text-white"></i
+    ></a>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script>
+      function showPopup(event) {
+        // Get the value of the 'ulasan' field
+        var ulasanValue = document.getElementById("example-text-input").value;
+        var selectedOption = aspekSelect.selectedOptions[0];
+        var aspekValue = selectedOption ? selectedOption.text : null;
+
+        // Display the ulasan value in the popup
+        document.getElementById("popupUlasan").innerText = ulasanValue;
+        document.getElementById("popupAspek").innerText = aspekValue;
+        document.getElementById("popupPrediksi").innerText = prediksi;
+
+        var popupImage = document.getElementById("popupImage");
+    if (prediksi === "Positif") {
+      popupImage.src = "../static/img/prediksi_positif.png";
+    } else if (prediksi === "Negatif") {
+      popupImage.src = "../static/img/prediksi_negatif.png";
+    } else if (prediksi === "Netral") {
+      popupImage.src = "../static/img/prediksi_netral.png";
+    } else {
+      // Handle any other cases or provide a default image source
+      popupImage.src = "../static/img/default.png";
+    }
+
+        // Show the popup
+        document.getElementById("popup").style.display = "block";
+
+        // Blur the entire page
+        document.body.classList.add("blur");
+      }
+
+      function closePopup() {
+        // Hide the popup
+        document.getElementById("popup").style.display = "none";
+
+       
+      }
+    </script>
+    
+    <script>
+      function submitForm(event) {
+        var selectedOption = document.getElementById("aspekSelect").value;
+        var textareaValue = document.getElementById("example-text-input").value;
+
+        // Prevent the default form submission if the textarea is empty
+        if (textareaValue.trim() === "") {
+          event.preventDefault();
+
+          // Display SweetAlert danger message
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Anda belum mengisi review. Yuk diisi dulu hehe",
+          });
+          return;
+        }
+        // Prevent the default form submission if the selected option is "Pilih aspek"
+        if (selectedOption === "Pilih aspek") {
+          event.preventDefault();
+          // Replace alert with SweetAlert danger message
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Anda belum memilih aspek. Yuk pilih dulu hehe",
+          });
+          return;
+        }
+
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the form data
+        var formData = new FormData(document.getElementById("predictionForm"));
+
+        // Perform AJAX request
+        fetch("/prediksi", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.text())
+          .then((result) => {
+            // Update the result in the input field with id "hasil-prediksi"
+            switch (result) {
+              case "positive":
+                prediksi = "Positif";
+                break;
+              case "negative":
+                prediksi = "Negatif";
+                break;
+              case "neutral":
+                prediksi = "Netral";
+            }
+            document.getElementById("hasilPrediksi").value = prediksi;
+        showPopup();
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+
+      function refreshForm() {
+        // Clear the review input field
+        document.getElementById("example-text-input").value = "";
+
+        // Reset the aspek dropdown to the default option
+        document.getElementById("aspekSelect").selectedIndex = 0;
+
+        // Reset hasil prediksi
+        // document.getElementById("hasil-prediksi").value = "";
+      }
+    </script>
+
+    <!-- JavaScript Libraries -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

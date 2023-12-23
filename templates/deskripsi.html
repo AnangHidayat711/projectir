@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Deskripsi</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+      href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Stylesheet -->
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/deskripsi.css') }}"
+      rel="stylesheet"
+    />
+
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-primary sticky-top">
+      <div class="container">
+        <nav class="navbar navbar-dark navbar-expand-lg py-0">
+          <a href="/" class="navbar-brand">
+            <h1 class="text-white fw-bold d-block">
+              Information <span class="text-secondary"> Retrieval</span>
+            </h1>
+          </a>
+          <button
+            type="button"
+            class="navbar-toggler me-0"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse bg-transparent"
+            id="navbarCollapse"
+          >
+            <div class="navbar-nav ms-auto mx-xl-auto p-0">
+              <a href="/" class="nav-item nav-link "
+                >Beranda</a>
+              <a href="/deskripsi" class="nav-item nav-link active text-secondary">Deskripsi</a>
+              <a href="/prediksi" class="nav-item nav-link">Prediksi</a>
+              <a href="/visualisasi" class="nav-item nav-link">Visualisasi</a>
+              <a href="/anggota" class="nav-item nav-link">Anggota</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 gambar">
+      <div class="container text-center py-5">
+        <h1 class="display-2 text-white mb-4 animated slideInDown">
+          Pantai Sanur
+        </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="/">Beranda</a></li>
+            <li class="breadcrumb-item">
+              <a href="/prediksi">Prediksi</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="/visualisasi">Visualisasi</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- About Sanur -->
+    <div class="container-fluid py-2 my-2">
+      <div class="container pt-5">
+        <div class="row g-5">
+          <div
+            class="col-lg-5 col-md-6 col-sm-12 wow fadeIn"
+            data-wow-delay=".3s"
+          >
+            <div class="h-100 position-relative">
+              <img
+                src="../static/img/sanurkotak1.jpg"
+                class="img-fluid w-75 rounded"
+                alt=""
+                style="margin-bottom: 25%"
+              />
+              <div class="position-absolute w-75" style="top: 25%; left: 25%">
+                <img
+                  src="../static/img/sanurkotak.jpg"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-7 col-md-6 col-sm-12 wow fadeIn"
+            data-wow-delay=".5s"
+          >
+            <h5 class="text-primary">Tentang</h5>
+            <h1 class="mb-4">Pantai Sanur</h1>
+            <p>
+              Pantai Sanur merupakan obyek wisata favorit para wisatawan di
+              Bali. Lokasi Pantai Sanur terletak di bagian timur Kota Denpasar.
+              Pantai Sanur memiliki keindahan yang berbeda dibandingkan
+              pantai-pantai di Bali. Pantai Sanur dapat dinikmati semua
+              kalangan, selain itu kawasan wisata ini juga tidak terlalu mahal.
+              Banyak pengiapan, restoran, maupun tempat seni yang dapat
+              dinikmati dengan harga terjangkau.
+            </p>
+            <p class="mb-4">
+              Tidak seperti Pantai Kuta, Pantai Sanur memiliki ombak yang
+              relatif tenang. Sanur merupakan pantai dengan garis pantai yang
+              cukup panjang, yaitu 8 km. Wisatawan pencinta pantai dapat
+              menjelajahi kawasan ini. Umumnya, masyarakat hanya mengenal Pantai
+              Sanur. Padahal kawasan pantai ini terdiri dari tujuh pantai, yaitu
+              Semawang, Merta Sari, Batu Jimbar, Sindhu, Karang Sanur, Segara
+              Ayu, dan Matahari Terbit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About Sanur End -->
+
+    <!-- About Sentimen -->
+    <div class="container-fluid py-2 my-2">
+      <div class="container pt-5">
+        <div class="row g-5">
+          <div
+            class="col-lg-7 col-md-6 col-sm-12 wow fadeIn"
+            data-wow-delay=".5s"
+          >
+            <h5 class="text-primary">Tentang</h5>
+            <h1 class="mb-4">Analisis Sentimen</h1>
+            <p>
+              Analisis sentimen adalah proses menggunakan teknik komputasional
+              atau statistikal untuk mengevaluasi dan menentukan sentimen,
+              opini, atau sikap dari suatu teks. Tujuannya adalah untuk memahami
+              perasaan atau pandangan yang terkandung dalam teks, baik itu dalam
+              bentuk ulasan produk, tweet, artikel berita, atau entri blog.
+              Analisis sentimen seringkali diterapkan dalam konteks bisnis dan
+              pemasaran untuk memahami umpan balik pelanggan, pemantauan merek,
+              dan tren pasar.
+            </p>
+            <p class="mb-4">
+              Website ini menampilkan analisis sentimen tentang Pantai Sanur
+              yang menampilkan beberapa aspek yaitu aspek attractions,
+              amenities, access, price, da no aspect.
+            </p>
+          </div>
+          <div
+            class="col-lg-5 col-md-6 col-sm-12 wow fadeIn"
+            data-wow-delay=".3s"
+          >
+            <div class="h-100 position-relative">
+              <img
+                src="../static/img/sanurkotak1.jpg"
+                class="img-fluid w-75 rounded"
+                alt=""
+                style="margin-bottom: 25%"
+              />
+              <div class="position-absolute w-75" style="top: 25%; left: 25%">
+                <img
+                  src="../static/img/sanurkotak2.jpg"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About Sentimen End -->
+
+    <!-- Aspek Start -->
+    <div class="container-fluid services py-5 mb-5">
+      <div class="container">
+        <div
+          class="text-center mx-auto pb-5 wow fadeIn"
+          data-wow-delay=".3s"
+          style="max-width: 600px"
+        >
+          <h5 class="text-primary">Analisis Sentimen</h5>
+          <h1>Aspek-Aspek Analisis Sentimen</h1>
+        </div>
+        <div class="row g-5 services-inner">
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fa fa-code fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Atraksi</h4>
+                  <p class="mb-4">
+                    Atraksi atau daya tarik wisata berkaitan dengan apa yang
+                    bisa dilihat (what to see) dan dilakukan (what to do) oleh
+                    wisatawan di sebuah destinasi wisata. Atraksi disebut juga
+                    objek dan daya tarik wisata yang diminati oleh wisatawan
+                    yang mencakup alam, budaya, dan buatan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fa fa-file-code fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Fasilitas</h4>
+                  <p class="mb-4">
+                    Fasilitas merupakan segala macam prasarana dan sarana yang
+                    diperlukan oleh wisatawan selama berada di daerah tujuan
+                    wisata, meliputi kebutuhan akomodasi, penyediaan makanan dan
+                    minuman, gedung pertunjukan, tempat hiburan (entertainment),
+                    dan tempat perbelanjaan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i
+                    class="fa fa-external-link-alt fa-7x mb-4 text-primary"
+                  ></i>
+                  <h4 class="mb-3">Akses</h4>
+                  <p class="mb-4">
+                    Akses merupakan sarana dan infrastruktur yang memberikan
+                    kemudahan kepada wisatawan untuk bergerak dari satu daerah
+                    ke daerah lain. Faktor-faktor yang penting terkait dengan
+                    aspek aksesibilitas wisata meliputi petunjuk arah, bandara,
+                    terminal, waktu yang dibutuhkan, biaya perjalanan, dan
+                    frekuensi transportasi menuju lokasi wisata.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fas fa-user-secret fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Harga</h4>
+                  <p class="mb-4">
+                    Harga merupakan ulasan terkait dengan harga yang dikeluarkan
+                    pengunjung saat berkunjung ke Pantai Sanur
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fa fa-envelope-open fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Tidak Ada Aspek</h4>
+                  <p class="mb-4">
+                    Tidak ada aspek merupakan kelompok aspek yang tidak dicakup
+                    keempat aspek lainnya.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Aspek End -->
+
+    <!-- Tim Start -->
+    <div class="container-fluid services py-5 mb-5">
+      <div class="container">
+        <div
+          class="text-center mx-auto pb-5 wow fadeIn"
+          data-wow-delay=".3s"
+          style="max-width: 600px"
+        >
+          <h5 class="text-primary">Pembagian Tugas</h5>
+          <h1>Tim Analisis Sentimen</h1>
+        </div>
+        <div class="row g-5 services-inner">
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fa fa-code fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Web Scraping</h4>
+                  <p class="mb-4">
+                    Tim web scraping bekerja dalam proses ekstraksi informasi
+                    atau data dari halaman web secara otomatis. Ini melibatkan
+                    penggunaan bot atau program komputer untuk mengakses situs
+                    web, mengambil data, dan menyimpannya untuk analisis lebih
+                    lanjut.
+                  </p>
+                  <a
+                    href="/anggota"
+                    class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+                    >Selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fa fa-file-code fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Preprocessing Data</h4>
+                  <p class="mb-4">
+                    Tim preprocessing data terlibat dalam serangkaian langkah
+                    untuk membersihkan data teks sebelum digunakan untuk mencari
+                    informasi. Tujuan utama dari preprocessing data dalam IR
+                    adalah untuk meningkatkan kualitas pencarian.
+                  </p>
+                  <a
+                    href="/anggota"
+                    class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+                    >Selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fas fa-user-secret fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Visualisasi Data</h4>
+                  <p class="mb-4">
+                    Tim visualisasi data berperan dalam representasi grafis dari
+                    informasi atau data, dirancang untuk memahami pola, tren,
+                    dan hubungan dalam dataset, dapat melibatkan berbagai jenis
+                    grafik, diagram, dan representasi grafis lainnya.
+                  </p>
+                  <a
+                    href="/anggota"
+                    class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+                    >Selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i
+                    class="fa fa-external-link-alt fa-7x mb-4 text-primary"
+                  ></i>
+                  <h4 class="mb-3">Labeling</h4>
+                  <p class="mb-4">
+                    Tim labeling berperan dalam menetapkan label atau kategori
+                    pada dokumen agar dapat digunakan dalam pembelajaran mesin
+                    atau pengukuran kinerja sistem.
+                  </p>
+                  <a
+                    href="/anggota"
+                    class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+                    >Selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fa fa-envelope-open fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Tim Website</h4>
+                  <p class="mb-4">
+                    Tim Website berperan dalam proses pembangunan website yang
+                    mencakup publikasi hasil analisis sentimen serta prediksi
+                    analisis sentimen.
+                  </p>
+                  <a
+                    href="/anggota"
+                    class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+                    >Selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fa fa-envelope-open fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Kajian Model</h4>
+                  <p class="mb-4">
+                    Tim kajian model berperan dalam proses pembangunan dan
+                    evaluasi model untuk analisis sentimen secara keseluruhan.
+                  </p>
+                  <a
+                    href="/anggota"
+                    class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+                    >Selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fa fa-envelope-open fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Pemodelan Topik</h4>
+                  <p class="mb-4">
+                    Tim pemodelan topik berperan dalam pemodelan atau penentuan
+                    topik serta interpretasinya.
+                  </p>
+                  <a
+                    href="/anggota"
+                    class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+                    >Selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Services End -->
+
+   <!-- Footer Start -->
+   <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+    <div class="container pt-5 pb-4">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <a href="/">
+                    <h1 class="text-white fw-bold d-block">Kelompok<span class="text-secondary">3SD1</span> </h1>
+                </a>
+                <p class="mt-4 text-light text-justify" style="text-align: justify";> Analisis sentimen adalah teknik analisis data yang digunakan untuk memahami perasaan, opini, dan sikap pengguna terhadap suatu merek, produk, atau layanan  </p>
+                <div class="d-flex hightech-link">
+                    <a href="https://www.instagram.com/esd1.gs/" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
+                    <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
+                    <a href="https://www.instagram.com/esd1.gs/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
+                    <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 text-center">
+                <a href="#" class="h3 text-secondary">Short Link</a>
+                <div class="mt-4 d-flex flex-column short-link">
+                    <a href="/" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Beranda</a>
+                    <a href="/deskripsi" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Deskripsi</a>
+                    <a href="/prediksi" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Prediksi</a>
+                    <a href="/visualisasi" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Visualisasi</a>
+                    <a href="/anggota" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Anggota</a>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="h3 text-secondary">Contact Us</a>
+                <div class="text-white mt-4 d-flex flex-column contact-link">
+                    <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Politeknik Statistika STIS</a>
+                    <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i>esd1.gs@gmail.com</a>
+                    <a href="https://www.instagram.com/esd1.gs/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" class="py-3 text-light border-bottom border-primary"><i class="fab fa-instagram text-secondary me-2"></i> esd1.gs</a>
+                </div>
+            </div>
+        </div>
+        <hr class="text-light mt-5 mb-4">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>Regard</a>, 3SD1</span>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <!--/* This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. */-->
+                <span class="text-light">Designed By<a href="https://htmlcodex.com" class="text-secondary">3SD1</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"
+      ><i class="fa fa-arrow-up text-white"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

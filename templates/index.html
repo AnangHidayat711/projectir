@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Beranda</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+
+    <!-- Template Stylesheet -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-primary sticky-top">
+      <div class="container">
+        <nav class="navbar navbar-dark navbar-expand-lg py-0">
+          <a href="/" class="navbar-brand">
+            <h1 class="text-white fw-bold d-block">
+              Information<span class="text-secondary"> Retrieval</span>
+            </h1>
+          </a>
+          <button
+            type="button"
+            class="navbar-toggler me-0"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse bg-transparent"
+            id="navbarCollapse"
+          >
+            <div class="navbar-nav ms-auto mx-xl-auto p-0">
+              <a
+                href="/"
+                class="nav-item nav-link active text-secondary"
+                >Beranda</a
+              >
+              <a href="/deskripsi" class="nav-item nav-link">Deskripsi</a>
+              <a href="/prediksi" class="nav-item nav-link">Prediksi</a>
+              <a href="/visualisasi" class="nav-item nav-link"
+                >Visualisasi</a
+              >
+              <a href="/anggota" class="nav-item nav-link">Anggota</a>
+            </div>
+          </div>
+          <!-- <div class="d-none d-xl-flex flex-shirink-0">
+                        <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                            <a href="" class="position-relative animated tada infinite">
+                                <i class="fa fa-phone-alt text-white fa-2x"></i>
+                                <div class="position-absolute" style="top: -7px; left: 20px;">
+                                    <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="d-flex flex-column pe-4 border-end">
+                            <span class="text-white-50">Have any questions?</span>
+                            <span class="text-secondary">Call: + 0123 456 7890</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center ms-4 ">
+                            <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
+                        </div>
+                    </div> -->
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Carousel Start -->
+    <div class="container-fluid px-0">
+      <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li
+            data-bs-target="#carouselId"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="First slide"
+          ></li>
+          <li
+            data-bs-target="#carouselId"
+            data-bs-slide-to="1"
+            aria-label="Second slide"
+          ></li>
+          <li
+            data-bs-target="#carouselId"
+            data-bs-slide-to="2"
+            aria-label="Third slide"
+          ></li>
+          <li
+            data-bs-target="#carouselId"
+            data-bs-slide-to="3"
+            aria-label="Fourth slide"
+          ></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <video class="img-fluid" autoplay loop muted alt="First slide">
+              <source src="../static/img/ombak.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-caption">
+              <div class="container carousel-content">
+                <h6 class="text-secondary h4 animated fadeInUp">
+                  Analisis Sentimen
+                </h6>
+                <h1 class="text-white display-1 mb-4 animated fadeInRight">
+                  Ulasan Pantai Sanur dalam Google Maps dan Tripadvisor
+                </h1>
+                <p class="mb-4 text-white fs-5 animated fadeInDown">
+                  Website ini menyediakan hasil analisis sentimen Pantai Sanur
+                  berdasarkan ulasan Google Maps dan Tripadvisor.
+                </p>
+                <a href="/visualisasi" class="me-2"
+                  ><button
+                    type="button"
+                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft"
+                  >
+                    Lihat Analisis
+                  </button></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video class="img-fluid" autoplay loop muted alt="Second slide">
+              <source src="../static/img/ombak-2.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-caption">
+              <div class="container carousel-content">
+                <h6 class="text-secondary h4 animated fadeInUp">
+                  Analisis Sentimen
+                </h6>
+                <h1 class="text-white display-1 mb-4 animated fadeInLeft">
+                  Perkirakan Sentimen Komentar Anda
+                </h1>
+                <p class="mb-4 text-white fs-5 animated fadeInDown">
+                  Website ini memberikan akses bagi Anda untuk melakukan
+                  perkiraan suatu sentimen dari komentar yang Anda tuliskan.
+                </p>
+                <a href="/prediksi" class="me-2"
+                  ><button
+                    type="button"
+                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft"
+                  >
+                    Lihat Prediksi
+                  </button></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video class="img-fluid" autoplay loop muted alt="Third slide">
+              <source src="../static/img/ombak-3-1.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-caption">
+              <div class="container carousel-content">
+                <h6 class="text-secondary h4 animated fadeInUp">
+                  Analisis Sentimen
+                </h6>
+                <h1 class="text-white display-1 mb-4 animated fadeInRight">
+                  Segala Sesuatu Tentang Pengerjaan Project Kami
+                </h1>
+                <p class="mb-4 text-white fs-5 animated fadeInDown">
+                  Proyek ini melakukan analisis sentimen terhadap ulasan Pantai
+                  Sanur dengan menggunakan empat sentimen.
+                </p>
+                <a href="/deskripsi" class="me-2"
+                  ><button
+                    type="button"
+                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft"
+                  >
+                    Lihat Pengerjaan
+                  </button></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/carosel-3.jpg" class="img-fluid" alt="Fourth slide" />
+            <div class="carousel-caption">
+              <div class="container carousel-content">
+                <h6 class="text-secondary h4 animated fadeInUp">
+                  Analisis Sentimen
+                </h6>
+                <h1 class="text-white display-1 mb-4 animated fadeInRight">
+                  Proyek Dikerjakan dengan Penuh Cinta
+                </h1>
+                <p class="mb-4 text-white fs-5 animated fadeInDown">
+                  Website ini dibangun atas kerja sama yang solid antara
+                  teman-teman kelas 3SD1.
+                </p>
+                <a href="/anggota" class="me-2"
+                  ><button
+                    type="button"
+                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft"
+                  >
+                    Lihat Anggota
+                  </button></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselId"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselId"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!-- Carousel End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 my-5">
+      <div class="container pt-5">
+        <div class="row g-5">
+          <div
+            class="col-lg-5 col-md-6 col-sm-12 wow fadeIn"
+            data-wow-delay=".3s"
+          >
+            <div class="h-100 position-relative">
+              <img
+                src="../static/img/about-2.webp"
+                class="img-fluid w-75 rounded"
+                alt=""
+                style="margin-bottom: 25%"
+              />
+              <div class="position-absolute w-75" style="top: 25%; left: 25%">
+                <img
+                  src="../static/img/about-1.webp"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-7 col-md-6 col-sm-12 wow fadeIn"
+            data-wow-delay=".5s"
+          >
+            <h5 class="text-primary">Description</h5>
+            <h1 class="mb-4">Sentimen Analisis Pantai Sanur, Bali</h1>
+            <p style="text-align: justify">
+              Pantai Sanur merupakan obyek wisata favorit para wisatawan di
+              Bali. Lokasi Pantai Sanur terletak di bagian timur Kota Denpasar.
+              Pantai Sanur memiliki keindahan yang berbeda dibandingkan
+              pantai-pantai di Bali. Pantai Sanur dapat dinikmati semua
+              kalangan, selain itu kawasan wisata ini juga tidak terlalu mahal.
+              Banyak pengiapan, restoran, maupun tempat seni yang dapat
+              dinikmati dengan harga terjangkau.
+            </p>
+            <p class="mb-4" style="text-align: justify">
+              Analisis sentimen adalah proses menggunakan teknik komputasional
+              atau statistikal untuk mengevaluasi dan menentukan sentimen,
+              opini, atau sikap dari suatu teks.
+            </p>
+            <a
+              href="/deskripsi"
+              class="btn btn-secondary rounded-pill px-5 py-3 text-white"
+              >More Details</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+
+    <!--Service Start -->
+    <div class="container-fluid services py-5 mb-5">
+      <div class="container">
+        <div
+          class="text-center mx-auto pb-5 wow fadeIn"
+          data-wow-delay=".3s"
+          style="max-width: 600px"
+        >
+          <h5 class="text-primary">Aspek Analisis</h5>
+          <h1>Analisis Sentimen Dibangun Atas Empat Sentimen</h1>
+        </div>
+        <div class="row g-5 services-inner">
+          <div class="col-md-6 wow fadeIn" data-wow-delay=".3s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fa fa-code fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Atraksi/Daya Tarik</h4>
+                  <a
+                    href="/deskripsi"
+                    class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 wow fadeIn" data-wow-delay=".5s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fa fa-file-code fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Fasilitas</h4>
+                  <a
+                    href="/deskripsi"
+                    class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 wow fadeIn" data-wow-delay=".7s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i
+                    class="fa fa-external-link-alt fa-7x mb-4 text-primary"
+                  ></i>
+                  <h4 class="mb-3">Akses</h4>
+                  <a
+                    href="/deskripsi"
+                    class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 wow fadeIn" data-wow-delay=".7s">
+            <div class="services-item bg-light">
+              <div class="p-4 text-center services-content">
+                <div class="services-content-icon">
+                  <i class="fas fa-laptop fa-7x mb-4 text-primary"></i>
+                  <h4 class="mb-3">Harga</h4>
+                  <a
+                    href="/deskripsi"
+                    class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Services End -->
+
+    <!-- Project Start -->
+    <div class="container-fluid project py-5 mb-5">
+      <div class="container">
+        <div
+          class="text-center mx-auto pb-5 wow fadeIn"
+          data-wow-delay=".3s"
+          style="max-width: 600px"
+        >
+          <h5 class="text-primary">Our Work</h5>
+          <h1>Galeri Pengerjaan Project</h1>
+        </div>
+        <div class="row g-5">
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/Web Scrapping_kerkom.jpeg"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Web Scrapping</h4>
+                    <p class="m-0 text-white">Collecting Data</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/Preprocessing_Kerkom.png"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Preprocessing Data</h4>
+                    <p class="m-0 text-white">Get Clear Data</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/visualisasi_kerkom.png"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Visualisasi Data</h4>
+                    <p class="m-0 text-white">Get Visualization</p>
+                    <!-- <h4 class="text-secondary">Preprocessing Data</h4>
+                                        <p class="m-0 text-white">Get Clear Data</p> -->
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/labelling_kerkom.png"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Labelling</h4>
+                    <p class="m-0 text-white">Set The Label Rule</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/website_kerkom.png"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Website</h4>
+                    <p class="m-0 text-white">Build This Incredible Website</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/attraction_kerkom.png"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Kajian Model - Daya Tarik</h4>
+                    <p class="m-0 text-white">
+                      Build The Sentiment Model of Attraction Aspect
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/amenities_kerkom.png"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Kajian Model - Fasilitas</h4>
+                    <p class="m-0 text-white">
+                      Build The Sentiment Model of Amenities Aspect
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/Access_Kerkom.png"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Kajian Model - Akses</h4>
+                    <p class="m-0 text-white">
+                      Build The Sentiment Model of Access Aspect
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/price_kerkom.png"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Kajian Model - Harga</h4>
+                    <p class="m-0 text-white">
+                      Build The Sentiment Model of Price Aspect
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/no aspect_kerkom.png"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Kajian Model - Tanpa Aspek</h4>
+                    <p class="m-0 text-white">
+                      Build The Sentiment Model of Price Aspect
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/topic_kerkom.png"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Pemodelan Topik</h4>
+                    <p class="m-0 text-white">Build The Sentiment Topic</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="project-item">
+              <div class="project-img">
+                <img
+                  src="../static/img/website_2.jpeg"
+                  class="img-fluid w-100 rounded"
+                  alt=""
+                />
+                <div class="project-content">
+                  <a href="#" class="text-center">
+                    <h4 class="text-secondary">Website</h4>
+                    <p class="m-0 text-white">Build This Incredible Website</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Project End -->
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5 mb-5 team">
+      <div class="container">
+        <div
+          class="text-center mx-auto pb-5 wow fadeIn"
+          data-wow-delay=".3s"
+          style="max-width: 600px"
+        >
+          <h5 class="text-primary">Our Team</h5>
+          <h1>Kelas 3SD1</h1>
+        </div>
+        <div class="owl-carousel team-carousel wow fadeIn" data-wow-delay=".5s">
+          <div class="rounded team-item">
+            <div class="team-content">
+              <div class="team-img-icon">
+                <div class="team-img rounded-circle">
+                  <img
+                    src="../static/img/Web scrapping_tim.jpeg"
+                    class="img-fluid w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="team-name text-center py-3">
+                  <h4 class="">Web Scraping</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded team-item">
+            <div class="team-content">
+              <div class="team-img-icon">
+                <div class="team-img rounded-circle">
+                  <img
+                    src="../static/img/preprocessing_tim.png"
+                    class="img-fluid w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="team-name text-center py-3">
+                  <h4 class="">Preprocessing</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded team-item">
+            <div class="team-content">
+              <div class="team-img-icon">
+                <div class="team-img rounded-circle">
+                  <img
+                    src="../static/img/visualisasi_tim.png"
+                    class="img-fluid w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="team-name text-center py-3">
+                  <h4 class="">Visualization</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded team-item">
+            <div class="team-content">
+              <div class="team-img-icon">
+                <div class="team-img rounded-circle">
+                  <img
+                    src="../static/img/labelling_tim.png"
+                    class="img-fluid w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="team-name text-center py-3">
+                  <h4 class="">Labelling</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded team-item">
+            <div class="team-content">
+              <div class="team-img-icon">
+                <div class="team-img rounded-circle">
+                  <img
+                    src="../static/img/website_tim.png"
+                    class="img-fluid w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="team-name text-center py-3">
+                  <h4 class="">Website</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded team-item">
+            <div class="team-content">
+              <div class="team-img-icon">
+                <div class="team-img rounded-circle">
+                  <img
+                    src="../static/img/attraction_tim.png"
+                    class="img-fluid w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="team-name text-center py-3">
+                  <h4 class="">Model Analysis - Attraction</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded team-item">
+            <div class="team-content">
+              <div class="team-img-icon">
+                <div class="team-img rounded-circle">
+                  <img
+                    src="../static/img/amenities_tim.png"
+                    class="img-fluid w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="team-name text-center py-3">
+                  <h4 class="">Model Analysis - Amenities</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded team-item">
+            <div class="team-content">
+              <div class="team-img-icon">
+                <div class="team-img rounded-circle">
+                  <img
+                    src="../static/img/access_tim.png"
+                    class="img-fluid w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="team-name text-center py-3">
+                  <h4 class="">Model Analysis - Access</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded team-item">
+            <div class="team-content">
+              <div class="team-img-icon">
+                <div class="team-img rounded-circle">
+                  <img
+                    src="../static/img/price_tim.png"
+                    class="img-fluid w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="team-name text-center py-3">
+                  <h4 class="">Model Analysis - Price</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded team-item">
+            <div class="team-content">
+              <div class="team-img-icon">
+                <div class="team-img rounded-circle">
+                  <img
+                    src="../static/img/no aspect_tim.png"
+                    class="img-fluid w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="team-name text-center py-3">
+                  <h4 class="">Model Analysis - No Aspect</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded team-item">
+            <div class="team-content">
+              <div class="team-img-icon">
+                <div class="team-img rounded-circle">
+                  <img
+                    src="../static/img/topic_tim.png"
+                    class="img-fluid w-100 rounded-circle"
+                    alt=""
+                  />
+                </div>
+                <div class="team-name text-center py-3">
+                  <h4 class="">Topic Modelling</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Team End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+        <div class="container pt-5 pb-4">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <a href="/">
+                        <h1 class="text-white fw-bold d-block">Kelompok<span class="text-secondary">3SD1</span> </h1>
+                    </a>
+                    <p class="mt-4 text-light text-justify" style="text-align: justify";> Analisis sentimen adalah teknik analisis data yang digunakan untuk memahami perasaan, opini, dan sikap pengguna terhadap suatu merek, produk, atau layanan  </p>
+                    <div class="d-flex hightech-link">
+                        <a href="https://www.instagram.com/esd1.gs/" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
+                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
+                        <a href="https://www.instagram.com/esd1.gs/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
+                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 text-center">
+                    <a href="#" class="h3 text-secondary">Short Link</a>
+                    <div class="mt-4 d-flex flex-column short-link">
+                        <a href="/" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Beranda</a>
+                        <a href="/deskripsi" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Deskripsi</a>
+                        <a href="/prediksi" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Prediksi</a>
+                        <a href="/visualisasi" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Visualisasi</a>
+                        <a href="/anggota" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Anggota</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <a href="#" class="h3 text-secondary">Contact Us</a>
+                    <div class="text-white mt-4 d-flex flex-column contact-link">
+                        <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Politeknik Statistika STIS</a>
+                        <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i>esd1.gs@gmail.com</a>
+                        <a href="https://www.instagram.com/esd1.gs/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" class="py-3 text-light border-bottom border-primary"><i class="fab fa-instagram text-secondary me-2"></i> esd1.gs</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="text-light mt-5 mb-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>Regard</a>, 3SD1</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/* This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. */-->
+                    <span class="text-light">Designed By<a href="https://htmlcodex.com" class="text-secondary">3SD1</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"
+      ><i class="fa fa-arrow-up text-white"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
