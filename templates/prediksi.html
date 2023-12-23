@@ -570,10 +570,10 @@
           },
           body: formData,
         })
-          .then((response) => response.json())  // Menangkap respons sebagai JSON
+          .then((response) => response.text())  // Menangkap respons sebagai JSON
           .then((result) => {
           // Update the result in the input field with id "hasil-prediksi"
-            switch (result.sentiment) {  // M
+            switch (result) {  // M
               case "positive":
                 prediksi = "Positif";
                 break;
