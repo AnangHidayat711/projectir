@@ -1,5 +1,5 @@
-# from flask import Flask, jsonify
-# import os
+from flask import Flask, jsonify
+import os
 
 # app = Flask(__name__)
 
@@ -11,12 +11,12 @@
 
 # if __name__ == '__main__':
 #     app.run(debug=True, port=os.getenv("PORT", default=5000))
-from flask import Flask, request, render_template
-from joblib import load
-from sklearn.feature_extraction.text import TfidfVectorizer
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-import nltk
-from nltk.corpus import stopwords
+# from flask import Flask, request, render_template
+# from joblib import load
+# from sklearn.feature_extraction.text import TfidfVectorizer
+# from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+# import nltk
+# from nltk.corpus import stopwords
 
 app = Flask(__name__)
 
