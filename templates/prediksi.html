@@ -492,7 +492,7 @@
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script>
-      function showPopup(event) {
+      function showPopup(prediksi) {
         // Get the value of the 'ulasan' field
         var ulasanValue = document.getElementById("example-text-input").value;
         var selectedOption = aspekSelect.selectedOptions[0];
@@ -501,7 +501,7 @@
         // Display the ulasan value in the popup
         document.getElementById("popupUlasan").innerText = ulasanValue;
         document.getElementById("popupAspek").innerText = aspekValue;
-        document.getElementById("popupPrediksi").innerText = "Test";
+        document.getElementById("popupPrediksi").innerText = prediksi;
 
         var popupImage = document.getElementById("popupImage");
     if (prediksi === "Positif") {
@@ -580,7 +580,7 @@
                 prediksi = "Netral";
             }
             // document.getElementById("hasilPrediksi").value = prediksi;
-        showPopup();
+        showPopup(prediksi);
           })
           .catch((error) => console.error("Error:", error));
       }
