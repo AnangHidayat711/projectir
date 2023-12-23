@@ -529,68 +529,68 @@
     </script>
     
     <script>
-      function submitForm(event) {
-        var selectedOption = document.getElementById("aspekSelect").value;
-        var textareaValue = document.getElementById("example-text-input").value;
+      // function submitForm(event) {
+      //   var selectedOption = document.getElementById("aspekSelect").value;
+      //   var textareaValue = document.getElementById("example-text-input").value;
 
-        // Prevent the default form submission if the textarea is empty
-        if (textareaValue.trim() === "") {
-          event.preventDefault();
+      //   // Prevent the default form submission if the textarea is empty
+      //   if (textareaValue.trim() === "") {
+      //     event.preventDefault();
 
-          // Display SweetAlert danger message
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Anda belum mengisi review. Yuk diisi dulu hehe",
-          });
-          return;
-        }
-        // Prevent the default form submission if the selected option is "Pilih aspek"
-        if (selectedOption === "Pilih aspek") {
-          event.preventDefault();
-          // Replace alert with SweetAlert danger message
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Anda belum memilih aspek. Yuk pilih dulu hehe",
-          });
-          return;
-        }
+      //     // Display SweetAlert danger message
+      //     Swal.fire({
+      //       icon: "error",
+      //       title: "Oops...",
+      //       text: "Anda belum mengisi review. Yuk diisi dulu hehe",
+      //     });
+      //     return;
+      //   }
+      //   // Prevent the default form submission if the selected option is "Pilih aspek"
+      //   if (selectedOption === "Pilih aspek") {
+      //     event.preventDefault();
+      //     // Replace alert with SweetAlert danger message
+      //     Swal.fire({
+      //       icon: "error",
+      //       title: "Oops...",
+      //       text: "Anda belum memilih aspek. Yuk pilih dulu hehe",
+      //     });
+      //     return;
+      //   }
 
-        event.preventDefault(); // Prevent the default form submission
+      //   event.preventDefault(); // Prevent the default form submission
 
-        // Get the form data
-        var formData = new FormData(document.getElementById("predictionForm"));
+      //   // Get the form data
+      //   var formData = new FormData(document.getElementById("predictionForm"));
 
-        // Perform AJAX request
-        fetch("/sentimen", {
-          method: "POST",
+      //   // Perform AJAX request
+      //   fetch("/sentimen", {
+      //     method: "POST",
   
-          body: formData,
-        })
-          .then((response) => response.text())  // Menangkap respons sebagai JSON
-          .then((result) => {
-          // Update the result in the input field with id "hasil-prediksi"
-            console.log(result);
-            switch (result) {  // M
-              case "positive":
-                prediksi = "Positif";
-                break;
-              case "negative":
-                prediksi = "Negatif";
-                break;
-              case "neutral":
-                prediksi = "Netral";
-                break
-              default:
-                prediksi = "Tidak diketahui";  // Handle jika nilai "sentiment" tidak valid
-                break;
-            }
-            // document.getElementById("hasilPrediksi").value = prediksi;
-        showPopup();
-          })
-          .catch((error) => console.error("Error:", error));
-      }
+      //     body: formData,
+      //   })
+      //     .then((response) => response.text())  // Menangkap respons sebagai JSON
+      //     .then((result) => {
+      //     // Update the result in the input field with id "hasil-prediksi"
+      //       console.log(result);
+      //       switch (result) {  // M
+      //         case "positive":
+      //           prediksi = "Positif";
+      //           break;
+      //         case "negative":
+      //           prediksi = "Negatif";
+      //           break;
+      //         case "neutral":
+      //           prediksi = "Netral";
+      //           break
+      //         default:
+      //           prediksi = "Tidak diketahui";  // Handle jika nilai "sentiment" tidak valid
+      //           break;
+      //       }
+      //       // document.getElementById("hasilPrediksi").value = prediksi;
+      //   showPopup();
+      //     })
+      //     .catch((error) => console.error("Error:", error));
+      // }
 
       function refreshForm() {
         // Clear the review input field
