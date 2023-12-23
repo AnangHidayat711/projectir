@@ -93,10 +93,10 @@ def deskripsi():
 def visualisasi():
     return render_template('visualisasi.html')
 
-# # Anggota
-# @app.route('/anggota', methods=['GET'])
-# def anggota():
-#     return render_template('anggota.html')
+# Anggota
+@app.route('/anggota', methods=['GET'])
+def anggota():
+    return render_template('anggota.html')
 
 # if __name__ == '__main__':
 #     app.run(port=3000, debug=True)
