@@ -570,6 +570,7 @@
           .then((response) => response.text())
           .then((result) => {
             // Update the result in the input field with id "hasil-prediksi"
+            prediksi = "Positif";
             switch (result) {
               case "positive":
                 prediksi = "Positif";
@@ -579,6 +580,7 @@
                 break;
               case "neutral":
                 prediksi = "Netral";
+                break
             }
             // document.getElementById("hasilPrediksi").value = prediksi;
         showPopup(prediksi);
