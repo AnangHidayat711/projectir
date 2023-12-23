@@ -6,6 +6,6 @@ itsdangerous==1.1.0
 Jinja2==2.11.3
 MarkupSafe==1.1.1
 Werkzeug==1.0.1
-scikit_learn==0.24.2
+scikit_learn==1.0.2
 nltk==3.6.2
 Sastrawi==1.0.1
