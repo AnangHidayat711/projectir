@@ -570,11 +570,10 @@
           },
           body: formData,
         })
-          .then((response) => response.text())
+          .then((response) => response.json())  // Menangkap respons sebagai JSON
           .then((result) => {
-            // Update the result in the input field with id "hasil-prediksi"
-            // prediksi = "Positif";
-            switch (result) {
+          // Update the result in the input field with id "hasil-prediksi"
+            switch (result.sentiment) {  // M
               case "positive":
                 prediksi = "Positif";
                 break;
@@ -584,6 +583,9 @@
               case "neutral":
                 prediksi = "Netral";
                 break
+              default:
+                prediksi = "Tidak diketahui";  // Handle jika nilai "sentiment" tidak valid
+                break;
             }
             // document.getElementById("hasilPrediksi").value = prediksi;
         showPopup(prediksi);
