@@ -88,10 +88,10 @@ def deskripsi():
 #     else:
 #         return render_template('prediksi.html')
 
-# # Visualisasi
-# @app.route('/visualisasi', methods=['GET'])
-# def visualisasi():
-#     return render_template('visualisasi.html')
+# Visualisasi
+@app.route('/visualisasi', methods=['GET'])
+def visualisasi():
+    return render_template('visualisasi.html')
 
 # # Anggota
 # @app.route('/anggota', methods=['GET'])
