@@ -492,7 +492,7 @@
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script>
-      function showPopup(prediksi) {
+      function showPopup(event) {
         // Get the value of the 'ulasan' field
         var ulasanValue = document.getElementById("example-text-input").value;
         var selectedOption = aspekSelect.selectedOptions[0];
@@ -588,7 +588,7 @@
                 break;
             }
             // document.getElementById("hasilPrediksi").value = prediksi;
-        showPopup(prediksi);
+        showPopup();
           })
           .catch((error) => console.error("Error:", error));
       }
