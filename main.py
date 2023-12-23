@@ -89,7 +89,7 @@ def prediksi():
     return render_template('prediksi.html')
 
 # Prediksi Post
-@app.route('/prediksi', methods=['POST'])
+@app.route('/sentimen', methods=['POST'])
 def sentimen():
     # Download NLTK resources
     nltk.download('punkt')
