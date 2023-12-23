@@ -111,35 +111,36 @@ def sentimen():
     stop_words = set(stopwords.words('indonesian'))
     # Create a Stemmer using Sastrawi
     stemmer = StemmerFactory().create_stemmer()
-    review = request.form['review']
-    aspek = request.form['aspek']
+    if request.method == "POST":
+        review = request.form['review']
+        aspek = request.form['aspek']
 
-    # Preprocess the input review
-    review = review.lower()  # Convert to lowercase
-    tokens = nltk.word_tokenize(review)  # Tokenization
-    tokens = [word for word in tokens if word.isalpha()]  # Remove non-alphabetic tokens
-    tokens = [word for word in tokens if word not in stop_words]  # Remove stopwords
-    tokens = [stemmer.stem(word) for word in tokens]  # Stemming
-
-    clean_review = ' '.join(tokens)
-
-    # Attractions
-    if aspek == '1':
-        result = model_attraction.predict([clean_review])[0]
-    # Price
-    elif aspek == '2':
-        result = model_price.predict([clean_review])[0]
-    # Access
-    elif aspek == '3':
-        result = model_access.predict([clean_review])[0]
-    # Amenities
-    elif aspek == '4':
-        result = model_amenities.predict([clean_review])[0]
-    # No Aspect
-    else:
-        result = model_noAspect.predict([clean_review])[0]
+        # Preprocess the input review
+        review = review.lower()  # Convert to lowercase
+        tokens = nltk.word_tokenize(review)  # Tokenization
+        tokens = [word for word in tokens if word.isalpha()]  # Remove non-alphabetic tokens
+        tokens = [word for word in tokens if word not in stop_words]  # Remove stopwords
+        tokens = [stemmer.stem(word) for word in tokens]  # Stemming
+    
+        clean_review = ' '.join(tokens)
+    
+        # Attractions
+        if aspek == '1':
+            result = model_attraction.predict([clean_review])[0]
+        # Price
+        elif aspek == '2':
+            result = model_price.predict([clean_review])[0]
+        # Access
+        elif aspek == '3':
+            result = model_access.predict([clean_review])[0]
+        # Amenities
+        elif aspek == '4':
+            result = model_amenities.predict([clean_review])[0]
+        # No Aspect
+        else:
+            result = model_noAspect.predict([clean_review])[0]
         
-    return result;
+        return result;
     
 # Visualisasi
 @app.route('/visualisasi', methods=['GET'])
