@@ -239,13 +239,13 @@
                         id="example-text-input"
                         name="review"
                       ></textarea>
-                      <input
+<!--                       <input
                         class="form-control"
                         type="hidden"
                         placeholder="Masukkan Teks Review"
                         id="hasilPrediksi"
                         name="hasil"
-                      ></input>
+                      ></input> -->
                     </div>
                   </div>
                   <!-- end row -->
@@ -579,7 +579,7 @@
               case "neutral":
                 prediksi = "Netral";
             }
-            document.getElementById("hasilPrediksi").value = prediksi;
+            // document.getElementById("hasilPrediksi").value = prediksi;
         showPopup();
           })
           .catch((error) => console.error("Error:", error));
