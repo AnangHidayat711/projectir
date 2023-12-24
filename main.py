@@ -126,7 +126,7 @@ def sentimen():
     
         clean_review = ' '.join(tokens)
     
-        Attractions
+        # Attractions
         if aspek == '1':
             result = model_attraction.predict([clean_review])[0]
         # Price
