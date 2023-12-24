@@ -20,6 +20,27 @@ from nltk.corpus import stopwords
 
 app = Flask(__name__)
 
+ # Download NLTK resources
+nltk.download('punkt')
+nltk.download('stopwords')
+
+model_access_path = "model/Access_Naive Bayes_model.joblib"
+model_amenities_path = "model/Amenities_KNN_model.joblib"
+model_attraction_path = "model/Attraction_SVM_model.joblib"
+model_noAspect_path = "model/No Aspect_Rocchio_model.joblib"
+model_price_path = "model/Price_Rocchio_model.joblib"
+
+model_access = load(model_access_path)
+model_amenities = load(model_amenities_path)
+model_attraction = load(model_attraction_path)
+model_noAspect = load(model_noAspect_path)
+model_price = load(model_price_path)
+
+# Get the Indonesian stopwords
+stop_words = set(stopwords.words('indonesian'))
+# Create a Stemmer using Sastrawi
+stemmer = StemmerFactory().create_stemmer()
+
 # Beranda
 @app.route('/', methods=['GET'])
 def index():
@@ -91,26 +112,7 @@ def prediksi():
 # Prediksi Post
 @app.route('/sentimen', methods=['POST'])
 def sentimen():
-    # Download NLTK resources
-    nltk.download('punkt')
-    nltk.download('stopwords')
-
-    model_access_path = "model/Access_Naive Bayes_model.joblib"
-    model_amenities_path = "model/Amenities_KNN_model.joblib"
-    model_attraction_path = "model/Attraction_SVM_model.joblib"
-    model_noAspect_path = "model/No Aspect_Rocchio_model.joblib"
-    model_price_path = "model/Price_Rocchio_model.joblib"
-
-    model_access = load(model_access_path)
-    model_amenities = load(model_amenities_path)
-    model_attraction = load(model_attraction_path)
-    model_noAspect = load(model_noAspect_path)
-    model_price = load(model_price_path)
-
-    # Get the Indonesian stopwords
-    stop_words = set(stopwords.words('indonesian'))
-    # Create a Stemmer using Sastrawi
-    stemmer = StemmerFactory().create_stemmer()
+   
     if request.method == "POST":
         review = request.form['review']
         aspek = request.form['aspek']
