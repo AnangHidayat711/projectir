@@ -97,7 +97,7 @@ function changeChart() {
     updateChart(config22);
   } else if (selectedOption1 === 'Rerata Jumlah Kata per Kalimat Tiap Aspek') {
     updateChart(config28);
-  } else if (selectedOption1 === 'Top 10 Kemunculan Kata') {
+  } else if (selectedOption1 === 'Top 5 Kemunculan Kata') {
     if (selectedOption2 === 'Attractions') {
       updateChart(config23);
     } else if (selectedOption2 === 'Amenities') {

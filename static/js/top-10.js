@@ -5,7 +5,7 @@ const config23 = {
         datasets: [{
             label: 'Jumlah Kemunculan Kata',
             data: [4462,1267,1236,1096,915],
-            backgroundColor: ['#0D47A1', '#1565C0', '#1976D2', '#1E88E5', '#2196F3'],
+            backgroundColor: ['#0D47A1', '#1976D2', '#2196F3', '#64B5F6', '#BBDEFB'],
             borderWidth: 1
         }]
     },
@@ -42,7 +42,7 @@ const config24 = {
         datasets: [{
             label: 'Jumlah Kemunculan Kata',
             data: [940,351,314,298,243],
-            backgroundColor: ['#0D47A1', '#1565C0', '#1976D2', '#1E88E5', '#2196F3'],
+            backgroundColor: ['#0D47A1', '#1976D2', '#2196F3', '#64B5F6', '#BBDEFB'],
             borderWidth: 1
         }]
     },
@@ -79,7 +79,7 @@ const config25 = {
         datasets: [{
             label: 'Jumlah Kemunculan Kata',
             data: [231,129,92,60,57],
-            backgroundColor: ['#0D47A1', '#1565C0', '#1976D2', '#1E88E5', '#2196F3'],
+            backgroundColor: ['#0D47A1', '#1976D2', '#2196F3', '#64B5F6', '#BBDEFB'],
             borderWidth: 1
         }]
     },
@@ -116,7 +116,7 @@ const config26 = {
         datasets: [{
             label: 'Jumlah Kemunculan Kata',
             data: [150,131,94,88,86],
-            backgroundColor: ['#0D47A1', '#1565C0', '#1976D2', '#1E88E5', '#2196F3'],
+            backgroundColor: ['#0D47A1', '#1976D2', '#2196F3', '#64B5F6', '#BBDEFB'],
             borderWidth: 1
         }]
     },
@@ -153,7 +153,7 @@ const config27 = {
         datasets: [{
             label: 'Jumlah Kemunculan Kata',
             data: [493,286,167,110,74],
-            backgroundColor: ['#0D47A1', '#1565C0', '#1976D2', '#1E88E5', '#2196F3'],
+            backgroundColor: ['#0D47A1', '#1976D2', '#2196F3', '#64B5F6', '#BBDEFB'],
             borderWidth: 1
         }]
     },
