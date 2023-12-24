@@ -127,21 +127,21 @@ def sentimen():
         clean_review = ' '.join(tokens)
     
         # Attractions
-        if aspek == '1':
-            result = model_attraction.predict([clean_review])[0]
-        # Price
-        elif aspek == '2':
-            result = model_price.predict([clean_review])[0]
-        # Access
-        elif aspek == '3':
-            result = model_access.predict([clean_review])[0]
-        # Amenities
-        elif aspek == '4':
-            result = model_amenities.predict([clean_review])[0]
-        # No Aspect
-        else:
-            result = model_noAspect.predict([clean_review])[0]
-        
+        # if aspek == '1':
+        #     result = model_attraction.predict([clean_review])[0]
+        # # Price
+        # elif aspek == '2':
+        #     result = model_price.predict([clean_review])[0]
+        # # Access
+        # elif aspek == '3':
+        #     result = model_access.predict([clean_review])[0]
+        # # Amenities
+        # elif aspek == '4':
+        #     result = model_amenities.predict([clean_review])[0]
+        # # No Aspect
+        # else:
+        #     result = model_noAspect.predict([clean_review])[0]
+        result = "Positif"
     return result;
     
 # Visualisasi
