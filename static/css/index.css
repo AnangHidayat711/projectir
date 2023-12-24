@@ -272,7 +272,7 @@
     .dropdown-container-1 {
       align-items: center;
       padding: 0px 20px 0 0;
-      z-index: 99999;
+      z-index: 3;
     }
   
     .select-box-2 .dropdown-options-container-2 {
@@ -297,7 +297,7 @@
     .dropdown-container-1 {
       align-items: center;
       padding: 0px 20px 0 0;
-      z-index: 99999;
+      z-index: 3;
     }
   
     .select-box-2 .dropdown-options-container-2 {
@@ -328,7 +328,7 @@
     .dropdown-container-1 {
       align-items: center;
       padding: 0px;
-      z-index: 99999;
+      z-index: 3;
     }
   
     .select-box-2 .dropdown-options-container-2 {
@@ -364,7 +364,7 @@
     }
   
     .dropdown-container-1 {
-      z-index: 99999;
+      z-index: 3;
     }
   
   
