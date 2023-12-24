@@ -10,6 +10,7 @@ const config16 = {
         }]
     },
     options: {
+        indexAxis:'y',
         maintainAspectRatio: false,
         scales: {
             x: {
@@ -48,6 +49,7 @@ const config17 = {
         }]
     },
     options: {
+        indexAxis:'y',
         maintainAspectRatio: false,
         scales: {
             x: {
@@ -86,6 +88,7 @@ const config18 = {
         }]
     },
     options: {
+        indexAxis:'y',
         maintainAspectRatio: false,
         scales: {
             x: {
@@ -124,6 +127,7 @@ const config19 = {
         }]
     },
     options: {
+        indexAxis:'y',
         maintainAspectRatio: false,
         scales: {
             x: {
@@ -162,6 +166,7 @@ const config20 = {
         }]
     },
     options: {
+        indexAxis:'y',
         maintainAspectRatio: false,
         scales: {
             x: {

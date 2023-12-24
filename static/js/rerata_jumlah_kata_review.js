@@ -10,6 +10,7 @@ const config21 = {
         }]
     },
     options: {
+        indexAxis:'y',
         maintainAspectRatio: false,
         scales: {
             x: {
