@@ -56,6 +56,36 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px; /* Adjust the gap as needed */
+      }
+
+      .grid-item {
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .grid-item p,
+      .grid-item h3 {
+        margin-top: 10px;
+        color: black; /* Sesuaikan warna teks sesuai kebutuhan */
+        font-size: 20px; /* Sesuaikan ukuran font sesuai kebutuhan */
+        text-align: center;
+
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek bayangan untuk meningkatkan kontras */
+      }
+    </style>
   </head>
 
   <body>
@@ -159,6 +189,7 @@
         </div>
         <div class="container-fluid feature">
           <div class="container pt-0">
+            <!-- </div> -->
             <div class="row g-0">
               <div class="wrap-all">
                 <div class="wrap-dropdown-container">
@@ -343,6 +374,34 @@
             </div>
           </div>
         </div>
+        <div class="wrap-chart">
+          <div class="image-grid">
+            <div class="grid-item">
+              <img src="../static/img/all aspect.jpeg" alt="Attraction Image" />
+              <h3>Wordcloud Semua Aspek</h3>
+            </div>
+            <div class="grid-item">
+              <img src="../static/img/attraction.jpeg" alt="Attraction Image" />
+              <h3>Wordcloud Attraction</h3>
+            </div>
+            <div class="grid-item">
+              <img src="../static/img/amenities.jpeg" alt="Amenities Image" />
+              <h3>Wordcloud Amenities</h3>
+            </div>
+            <div class="grid-item">
+              <img src="../static/img/access.jpeg" alt="Access Image" />
+              <h3>Wordcloud Access</h3>
+            </div>
+            <div class="grid-item">
+              <img src="../static/img/price.jpeg" alt="Price Image" />
+              <h3>Wordcloud Price</h3>
+            </div>
+            <div class="grid-item">
+              <img src="../static/img/no aspect.jpeg" alt="Price Image" />
+              <h3>Wordcloud No Aspect</h3>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -459,6 +518,28 @@
     <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"
       ><i class="fa fa-arrow-up text-white"></i
     ></a>
+
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check if WordCloud is defined
+        if (typeof WordCloud !== "undefined") {
+          console.log("WordCloud library is loaded.");
+
+          // Your existing code for generating the word cloud
+          var words = [
+            { text: "Word1", weight: 10 },
+            { text: "Word2", weight: 8 },
+            { text: "Word3", weight: 6 },
+          ];
+          var options = {
+            list: words,
+          };
+          WordCloud(document.getElementById("wordcloud"), options);
+        } else {
+          console.error("WordCloud library is not loaded.");
+        }
+      });
+    </script> -->
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

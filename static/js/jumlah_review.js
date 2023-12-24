@@ -1,5 +1,5 @@
 const config00 = {
-    type: 'bar',
+    type: 'polarArea',
     data: {
         labels: ['Attractions', 'Amenities', 'Access', 'Price', 'No Aspect'],
         datasets: [{
@@ -10,28 +10,28 @@ const config00 = {
         }]
     },
     options: {
-        indexAxis:'y',
+        // indexAxis:'y',
         maintainAspectRatio: false,
-        scales: {
-            x: {
-                title: {
-                    display: true,
-                    text: 'Aspek'
-                }
-            },
-            y: {
-                beginAtZero: true,
-                title: {
-                    display: true,
-                    text: 'Jumlah Review per Aspek'
-                }
-            }
-        },
-        plugins: {
-            legend: {
-                display: false,
-            }
-        },
+        // scales: {
+        //     x: {
+        //         title: {
+        //             display: true,
+        //             text: 'Aspek'
+        //         }
+        //     },
+        //     y: {
+        //         beginAtZero: true,
+        //         title: {
+        //             display: true,
+        //             text: 'Jumlah Review per Aspek'
+        //         }
+        //     }
+        // },
+        // plugins: {
+        //     legend: {
+        //         display: false,
+        //     }
+        // },
     }
 };
 

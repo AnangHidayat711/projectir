@@ -109,7 +109,7 @@ function changeChart() {
     } else if (selectedOption2 === 'No Aspect') {
       updateChart(config27);
     }
-  }
+  } 
 }
 
 function updateChart(config) {
