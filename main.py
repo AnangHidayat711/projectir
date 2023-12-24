@@ -141,7 +141,7 @@ def sentimen():
         # # No Aspect
         # else:
         #     result = model_noAspect.predict([clean_review])[0]
-        result = "Positif"
+        result = "positive"
     return result;
     
 # Visualisasi
