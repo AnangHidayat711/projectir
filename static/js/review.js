@@ -53,14 +53,14 @@ const config01 = {
             x: {
                 title: {
                     display: true,
-                    text: 'Sentimen'
+                    text: 'Jumlah Review per Sentimen'
                 }
             },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Jumlah Review per Sentimen'
+                    text: 'Sentimen'
                 }
             }
         },
@@ -90,14 +90,14 @@ const config02 = {
             x: {
                 title: {
                     display: true,
-                    text: 'Sentimen'
+                    text: 'Jumlah Review per Sentimen'
                 }
             },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Jumlah Review'
+                    text: 'Sentimen'
                 }
             }
         },
@@ -127,14 +127,14 @@ const config03 = {
             x: {
                 title: {
                     display: true,
-                    text: 'Sentimen'
+                    text: 'Jumlah Review per Sentimen'
                 }
             },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Jumlah Review'
+                    text: 'Sentimen'
                 }
             }
         },
@@ -164,14 +164,14 @@ const config04 = {
             x: {
                 title: {
                     display: true,
-                    text: 'Sentimen'
+                    text: 'Jumlah Review per Sentimen'
                 }
             },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Jumlah Review'
+                    text: 'Sentimen'
                 }
             }
         },
@@ -201,14 +201,14 @@ const config05 = {
             x: {
                 title: {
                     display: true,
-                    text: 'Sentimen'
+                    text: 'Jumlah Review per Sentimen'
                 }
             },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Jumlah Review'
+                    text: 'Sentimen'
                 }
             }
         },

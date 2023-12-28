@@ -3,7 +3,7 @@ const config16 = {
     data: {
         labels: ['Positif', 'Negatif', 'Netral'],
         datasets: [{
-            label: 'Rerata Jumlah Kata Unik',
+            label: 'Rata-Rata Jumlah Kata Unik',
             data: [12.011765, 11.791667, 11.715434],
             backgroundColor: ['#Fc766A', '#5b84b1', '#9dbdbA'],
             borderWidth: 1
@@ -16,14 +16,14 @@ const config16 = {
             x: {
                 title: {
                     display: true,
-                    text: 'Sentimen'
+                    text: 'Rata-Rata Jumlah Kata Unik per Label Sentimen'
                 }
             },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Rerata Jumlah Kata Unik per Label Sentimen'
+                    text: 'Sentimen'
                 }
             }
         },
@@ -42,7 +42,7 @@ const config17 = {
     data: {
         labels: ['Positif', 'Negatif', 'Netral'],
         datasets: [{
-            label: 'Rerata Jumlah Kata Unik',
+            label: 'Rata-Rata Jumlah Kata Unik',
             data: [3.870588, 5.791667, 3.950965],
             backgroundColor: ['#Fc766A', '#5b84b1', '#9dbdbA'],
             borderWidth: 1
@@ -55,14 +55,14 @@ const config17 = {
             x: {
                 title: {
                     display: true,
-                    text: 'Sentimen'
+                    text: 'Rata-Rata Jumlah Kata Unik per Label Sentimen'
                 }
             },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Rerata Jumlah Kata Unik per Label Sentimen'
+                    text: 'Sentimen'
                 }
             }
         },
@@ -81,7 +81,7 @@ const config18 = {
     data: {
         labels: ['Positif', 'Negatif', 'Netral'],
         datasets: [{
-            label: 'Rerata Jumlah Kata Unik',
+            label: 'Rata-Rata Jumlah Kata Unik',
             data: [1.394118, 2.041667, 1.631833],
             backgroundColor: ['#Fc766A', '#5b84b1', '#9dbdbA'],
             borderWidth: 1
@@ -94,14 +94,14 @@ const config18 = {
             x: {
                 title: {
                     display: true,
-                    text: 'Sentimen'
+                    text: 'Rata-Rata Jumlah Kata Unik per Label Sentimen'
                 }
             },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Rerata Jumlah Kata Unik per Label Sentimen'
+                    text: 'Sentimen'
                 }
             }
         },
@@ -120,7 +120,7 @@ const config19 = {
     data: {
         labels: ['Positif', 'Negatif', 'Netral'],
         datasets: [{
-            label: 'Rerata Jumlah Kata Unik',
+            label: 'Rata-Rata Jumlah Kata Unik',
             data: [1.729412, 2.083333, 1.659164],
             backgroundColor: ['#Fc766A', '#5b84b1', '#9dbdbA'],
             borderWidth: 1
@@ -133,14 +133,14 @@ const config19 = {
             x: {
                 title: {
                     display: true,
-                    text: 'Sentimen'
+                    text: 'Rata-Rata Jumlah Kata Unik per Label Sentimen'
                 }
             },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Rerata Jumlah Kata Unik per Label Sentimen'
+                    text: 'Sentimen'
                 }
             }
         },
@@ -159,7 +159,7 @@ const config20 = {
     data: {
         labels: ['Positif', 'Negatif', 'Netral'],
         datasets: [{
-            label: 'Rerata Jumlah Kata Unik',
+            label: 'Rata-Rata Jumlah Kata Unik',
             data: [2.741176, 3.041667, 2.124598],
             backgroundColor: ['#Fc766A', '#5b84b1', '#9dbdbA'],
             borderWidth: 1
@@ -172,14 +172,14 @@ const config20 = {
             x: {
                 title: {
                     display: true,
-                    text: 'Sentimen'
+                    text: 'Rata-Rata Jumlah Kata Unik per Label Sentimen'
                 }
             },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Rerata Jumlah Kata Unik per Label Sentimen'
+                    text: 'Sentimen'
                 }
             }
         },
